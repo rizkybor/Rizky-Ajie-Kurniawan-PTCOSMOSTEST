@@ -1,24 +1,3 @@
-/* ==========================================================
-   CATATAN KOMPATIBILITAS IE11 + FIREFOX — BACA DULU SEBELUM EDIT
-   ==========================================================
-   1. TIDAK pakai CSS custom properties (--warna / var()) karena IE11
-      tidak support. Semua warna ditulis literal (hex) di setiap rule.
-   2. TIDAK pakai CSS Grid. Semua layout pakai Bootstrap 4 grid
-      (flexbox) yang sudah punya fallback -ms- di file bootstrap.min.css.
-   3. TIDAK pakai `gap` di flexbox (belum aman di IE11) — pakai
-      margin/padding manual.
-   4. TIDAK pakai `object-fit` untuk gambar (tidak didukung IE11).
-   5. Semua gradient ditulis dua kali kalau perlu: prefix -ms- (untuk
-      jaga-jaga di edge case IE10/11 lama) lalu standar tanpa prefix.
-
-   Property order (Coding Guideline 4-2):
-   1. display, position, float, etc.
-   2. width, height, etc.
-   3. margin, padding
-   4. border, background, etc.
-   5. text, fonts, etc.
-   6. others
-   ========================================================== */
 
 body {
   overflow-x: hidden;
@@ -27,27 +6,16 @@ body {
   font-family: "Inter", "Unbounded", sans-serif;
 }
 
-/* Pengaman umum: gambar tidak pernah melebihi lebar induknya, supaya
-   tidak ada elemen yang memicu horizontal-scroll di layar sempit.
-   Sengaja tidak menimpa height, supaya ikon dengan height tetap
-   (mis. logo) tidak gepeng. */
 img {
   max-width: 100%;
 }
 
-/* Width guideline (desktop): konten yang tidak full-bleed dibatasi
-   max-width 1250px. Background full-bleed (mis. .expertise-banner) tetap
-   boleh selebar layar; yang dibatasi cukup .container di dalamnya. */
 @media (min-width: 1300px) {
   .container {
     max-width: 1250px;
   }
 }
 
-/* Width guideline (mobile): konten yang tidak full-bleed dibatasi
-   max-width 335px (mengikuti frame desain 375px dengan margin 20px kiri
-   kanan). Section full-bleed (background gambar, kartu edge-to-edge)
-   tidak terpengaruh karena berada di luar .container. */
 @media (max-width: 767.98px) {
   .container {
     max-width: 335px;
@@ -269,9 +237,6 @@ a:focus {
   z-index: 1;
 }
 
-/* Mobile: hero pakai 2 kolom kecil (col-8/col-4) dari Bootstrap yang
-   pas untuk desktop, tapi terlalu sempit di layar 335px — ditumpuk
-   penuh supaya headline dan kotak "we believe" tidak gepeng. */
 @media (max-width: 767.98px) {
   .hero-section .col-8,
   .hero-section .col-4 {
@@ -444,11 +409,6 @@ a:focus {
   min-height: 380px;
 }
 
-/* Kolom kiri (col-lg-8) membungkus 3 baris berurutan:
-   1. eyebrow + paragraf 1   (dua kolom sejajar di desktop)
-   2. heading                (berdiri sendiri, full width)
-   3. icon cluster + paragraf 2 (dua kolom sejajar di desktop)
-   Di mobile ketiganya otomatis full width & bertumpuk (col-12). */
 .dreams-stack {
   display: -ms-flexbox;
   display: flex;
@@ -674,9 +634,7 @@ a:focus {
 .objectives-table {
   border: 1px solid #35313f;
 }
-/* Offset penyelarasan di bawah kolom paragraf tengah — hanya berlaku
-   di layar besar; di mobile tabel harus mulai dari kiri (0) supaya
-   tetap masuk di lebar 335px tanpa overflow horizontal. */
+
 @media (min-width: 992px) {
   .objectives-table-offset {
     margin-left: 200px;
@@ -754,9 +712,6 @@ a:focus {
   margin-bottom: 0;
 }
 
-/* Orb icon row: 1 orb untuk tab "Branding", 2 untuk "Design", 3 untuk
-   "Marketing" — sekarang berupa <img> (ico_orb.svg), ditumpuk seperti
-   avatar group. Dibatasi ukurannya supaya tidak meluber di mobile. */
 .orb-icon-row {
   display: -ms-flexbox;
   display: flex;
