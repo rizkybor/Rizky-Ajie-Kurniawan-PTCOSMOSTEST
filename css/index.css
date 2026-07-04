@@ -257,13 +257,23 @@ a:focus {
 }
 .hero-year {
   margin-right: 16px;
-  color: #c9a6ff;
   font-size: 2rem;
   font-weight: 300;
   line-height: 1;
+  color: #c9a6ff; /* fallback solid untuk browser yang tidak support background-clip:text */
+  background: -webkit-linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  background: linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .hero-greet {
-  color: #cfcbd9;
+  color: #c9a6ff; /* fallback solid untuk browser yang tidak support background-clip:text */
+  background: -webkit-linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  background: linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 0.8125rem;
   line-height: 1.4;
 }
@@ -297,6 +307,7 @@ a:focus {
 .hero-title-line1 {
   margin-bottom: 60px;
 }
+
 @media (min-width: 768px) {
   .hero-title-line1 {
     margin-bottom: 75px;
@@ -433,7 +444,12 @@ a:focus {
 
 .eyebrow-dreams {
   margin-bottom: 0;
-  color: #cfcbd9;
+color: #c9a6ff; /* fallback solid untuk browser yang tidak support background-clip:text */
+  background: -webkit-linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  background: linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 0.8125rem;
   letter-spacing: 0.5px;
 }
@@ -780,7 +796,12 @@ a:focus {
 }
 .banner-greet {
   margin: 0 8px 0;
-  color: #e8e6f0;
+color: #c9a6ff; /* fallback solid untuk browser yang tidak support background-clip:text */
+  background: -webkit-linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  background: linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
   font-size: 0.8125rem;
   line-height: 1.5;
 }
@@ -937,4 +958,16 @@ a:focus {
   color: #6f6a7d;
   font-size: 0.75rem;
   text-align: center;
+}
+
+
+.hero-title .text-accent,
+.hero-title-line2,
+.hero-eyebrow-row .hero-greet .text-accent .hero-year, .dreams-title, .objectives-title, .banner-title, .section-title  {
+  color: #c9a6ff; /* fallback solid untuk browser yang tidak support background-clip:text */
+  background: -webkit-linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  background: linear-gradient(90deg, #c6f1f7 0%, #f983e9 35%, #b877ff 65%, #c2e9cd 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
