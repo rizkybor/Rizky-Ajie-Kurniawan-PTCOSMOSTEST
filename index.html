@@ -1,0 +1,962 @@
+<!doctype html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <!-- Wajib untuk IE: paksa mode rendering terbaru -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Influenzailla — Bespoke Design and Marketing Services</title>
+
+    <!-- Favicon (file-nya ada di root, sejajar index.html) -->
+    <link rel="icon" href="favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+    <link rel="manifest" href="site.webmanifest" />
+
+    <!-- Bootstrap 4.6.2 -> versi TERAKHIR yang resmi masih support IE11. Jangan upgrade ke v5. -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
+    />
+    <!-- Pakai endpoint klasik (bukan /css2) supaya Google tetap mengirim
+     format WOFF untuk IE11 — endpoint css2 hanya melayani browser modern. -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700|Unbounded:400,600,700,800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body data-spy="scroll" data-target="#heroLinksNav" data-offset="80">
+    <!-- ======================================================
+     WRAPPER: background gambar dipasang di sini supaya
+     nyambung dari navbar sampai hero (bukan cuma di hero).
+     Ganti file di assets/img/hero-bg.png dengan aset final.
+====================================================== -->
+    <div
+      class="top-hero-wrap"
+      style="background-image: url(&quot;assets/img/hero-bg.png&quot;)"
+    >
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <!-- ======================================================
+       NAVBAR
+       Baris 1: Logo + About / Services / Cases / Team / [globe icon]
+       Baris 2: Boost Program / Products / Book / Blog
+       Desktop: grid kotak-kotak dengan border (sesuai Figma).
+       Mobile : disederhanakan jadi list vertikal collapsible.
+  ====================================================== -->
+      <header class="site-header">
+        <div class="container-nav">
+          <div class="navbar navbar-expand-lg navbar-dark navbar-grid">
+            <a class="navbar-brand nav-logo-cell" href="#">
+              <img
+                src="assets/icons/logo-mark.svg"
+                alt=""
+                class="logo-mark"
+                width="28"
+                height="28"
+              />
+              <span class="logo-text">Influenzailla</span>
+              <span class="brand-tagline d-none d-md-inline"
+                >bespoke design and<br />marketing services</span
+              >
+            </a>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#mainNav"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Desktop grid (2 baris, kotak-kotak dengan border) -->
+            <div class="nav-menu-cell d-none d-lg-flex">
+              <div class="nav-row nav-row-1">
+                <a class="nav-cell" href="#about-us">About</a>
+                <a class="nav-cell nav-cell-wide" href="#expertise">Services</a>
+                <a class="nav-cell nav-cell-wide" href="#projects">Cases</a>
+                <a class="nav-cell" href="#team">Team</a>
+                <a
+                  class="nav-cell nav-cell-icon"
+                  href="#lang"
+                  aria-label="Language"
+                >
+                  <img
+                    src="assets/icons/globe.svg"
+                    alt="Language"
+                    width="18"
+                    height="18"
+                  />
+                </a>
+              </div>
+              <div class="nav-row nav-row-2">
+                <a class="nav-cell nav-cell-wide" href="#boost-program"
+                  >Boost Program</a
+                >
+                <a class="nav-cell nav-cell-wide" href="#products">Products</a>
+                <a class="nav-cell nav-cell-narrow" href="#book">Book</a>
+                <a class="nav-cell" href="#blog">Blog</a>
+              </div>
+            </div>
+
+            <!-- Mobile: list vertikal sederhana di dalam collapse -->
+            <div class="collapse navbar-collapse d-lg-none" id="mainNav">
+              <ul class="navbar-nav main-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="#about-us">About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#expertise">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#projects">Cases</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#team">Team</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#boost-program">Boost Program</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#products">Products</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#book">Book</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#blog">Blog</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- ======================================================
+       HERO — berbagi background dengan navbar di atas (lihat .top-hero-wrap)
+  ====================================================== -->
+      <section class="hero-section">
+        <div class="container position-relative">
+          <div class="row">
+            <div class="col-8">
+              <div class="hero-eyebrow-row">
+                <span class="hero-year">2023</span>
+                <span class="hero-greet"
+                  >hi there, let's
+                  <span class="text-accent">get started!</span></span
+                >
+              </div>
+
+              <h1 class="hero-title">
+                <span class="hero-title-line1"
+                  >Influence
+                  <span class="hero-your-wrap">
+                    <img
+                      src="assets/icons/ornament.svg"
+                      class="hero-squiggle"
+                      alt=""
+                    />
+                    <span class="text-accent">your</span>
+                    <span class="hero-sub"
+                      >boost your brand with our marketing expertise</span
+                    >
+                  </span>
+                  <span class="hero-title-line2">audience</span>
+                </span>
+              </h1>
+            </div>
+
+            <div class="col-4 mt-12">
+              <div class="hero-believe">
+                <img
+                  src="assets/icons/single-union.svg"
+                  alt=""
+                  class="hero-believe-icon"
+                  width="28"
+                  height="28"
+                />
+                <p>
+                  We believe in the power of digital media to transform
+                  businesses and connect them with their audiences in meaningful
+                  ways.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Anchor / scrollspy nav: urutan link = urutan section di bawah -->
+        </div>
+      </section>
+      <nav id="heroLinksNav" class="row hero-links">
+        <div class="col-6 col-md-3">
+          <a class="nav-link" href="#about-us">About us</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="nav-link" href="#expertise">Expertise</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="nav-link" href="#get-started">Get started</a>
+        </div>
+        <div class="col-6 col-md-3">
+          <a class="nav-link" href="#what-we-do">What we do</a>
+        </div>
+      </nav>
+    </div>
+
+    <!-- ======================================================
+     "WE TURN YOUR DIGITAL DREAMS INTO REALITY"
+     Menggabungkan intro (London 2006 + 2 paragraf) dan heading utama
+     dalam satu section, sesuai layout terbaru.
+====================================================== -->
+    <section class="dreams-section py-5" id="about-us">
+      <div class="container">
+        <div class="row dreams-row">
+          <!-- Kolom kiri: eyebrow, heading besar, ikon cluster -->
+          <div
+            class="col-12 col-lg-5 d-flex flex-column justify-content-between dreams-left"
+          >
+            <p class="eyebrow-dreams">
+              London <span class="text-accent">2006</span>
+            </p>
+
+            <div class="dreams-heading-wrap" id="expertise">
+              <h2 class="section-title dreams-title">
+                We turn <span class="text-accent">your digital</span><br />
+                <span class="text-accent">dreams</span> into reality
+              </h2>
+              <svg
+                class="dreams-squiggle"
+                viewBox="0 0 200 20"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 12 Q 14 2, 26 12 T 50 12 T 74 12 T 98 12 T 122 12 T 146 12 T 170 12 T 194 12"
+                  stroke="#e05cc0"
+                  stroke-width="3"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </div>
+
+            <span class="cluster-icon" aria-hidden="true">
+              <svg viewBox="0 0 90 40" width="90" height="40">
+                <path
+                  d="M14 4 L16.5 11 L24 12 L18 17 L19.5 24.5 L14 20.5 L8.5 24.5 L10 17 L4 12 L11.5 11 Z"
+                  fill="none"
+                  stroke="#e8e6f0"
+                  stroke-width="1"
+                />
+                <path
+                  d="M38 2 L40.8 10 L49 11 L42.5 16.5 L44.3 25 L38 20.3 L31.7 25 L33.5 16.5 L27 11 L35.2 10 Z"
+                  fill="none"
+                  stroke="#e8e6f0"
+                  stroke-width="1"
+                />
+                <path
+                  d="M62 4 L64.5 11 L72 12 L66 17 L67.5 24.5 L62 20.5 L56.5 24.5 L58 17 L52 12 L59.5 11 Z"
+                  fill="none"
+                  stroke="#e8e6f0"
+                  stroke-width="1"
+                />
+              </svg>
+            </span>
+          </div>
+
+          <!-- Kolom tengah: 2 pasang paragraf, sejajar dgn eyebrow (atas) & ikon (bawah) -->
+          <div
+            class="col-12 col-lg-4 offset-lg-1 d-flex flex-column justify-content-between dreams-middle"
+          >
+            <div class="dreams-para-group">
+              <p class="section-copy">
+                Our creative design bureau is based in the heart of London and
+                specializes in digital branding, website design, and influence
+                marketing.
+              </p>
+              <p class="section-copy">
+                We believe in the power of digital media to transform businesses
+                and connect them with their audiences in meaningful ways.
+              </p>
+            </div>
+            <div class="dreams-para-group">
+              <p class="section-copy">
+                Our team of experienced designers and marketing professionals
+                work closely with each client to understand their unique vision
+                and develop tailored solutions that align with their goals.
+              </p>
+              <p class="section-copy">
+                From designing eye-catching logos and brand identities, to
+                building custom websites that engage and convert visitors, to
+                crafting effective influencer marketing campaigns, we are
+                dedicated to helping our clients succeed in the digital space.
+              </p>
+            </div>
+          </div>
+
+          <!-- Kolom kanan: kartu orb "since 2006" -->
+          <div class="col-12 col-lg-2 offset-lg-1 dreams-right">
+            <div class="orb-card">
+              <div class="aurora aurora-orb" aria-hidden="true"></div>
+              <span class="orb-label"
+                >since<br /><span class="text-accent">2006</span></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+     GRID 4 KARTU (01–04)
+====================================================== -->
+    <section class="cards-section">
+      <div class="container-fluid px-0">
+        <div class="row no-gutters">
+          <div class="col-12 col-md-6">
+            <div
+              class="feature-card"
+              style="background-image: url(&quot;assets/img/card-1.png&quot;)"
+            >
+              <div class="feature-card-overlay" aria-hidden="true"></div>
+              <span class="feature-num">01</span>
+              <p class="feature-copy">
+                We create unique brand identities that resonate with your target
+                audience and help you stand out in a crowded marketplace
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div
+              class="feature-card"
+              style="background-image: url(&quot;assets/img/card-2.png&quot;)"
+            >
+              <div class="feature-card-overlay" aria-hidden="true"></div>
+              <span class="feature-num">02</span>
+              <p class="feature-copy">
+                We build custom websites that are visually stunning, easy to
+                navigate, and optimized for search engines
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div
+              class="feature-card"
+              style="background-image: url(&quot;assets/img/card-3.png&quot;)"
+            >
+              <div class="feature-card-overlay" aria-hidden="true"></div>
+              <span class="feature-num">03</span>
+              <p class="feature-copy">
+                We develop influencer campaigns that help you reach a wider
+                audience, build brand awareness, and drive conversions
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div
+              class="feature-card"
+              style="background-image: url(&quot;assets/img/card-4.png&quot;)"
+            >
+              <div class="feature-card-overlay" aria-hidden="true"></div>
+              <span class="feature-num">04</span>
+              <p class="feature-copy">
+                We produce high-quality content that engages your audience,
+                builds trust, and reinforces your brand message
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+     "HELP OUR CLIENTS ACHIVE THEIR BUSINESS OBJECTIVES"
+     (ejaan "achive" disamakan persis dengan yang ada di desain)
+====================================================== -->
+    <section class="objectives-section py-5" id="get-started">
+      <div class="container">
+        <h2 class="section-title objectives-title">
+          Help our
+          <span class="text-accent"
+            >clients
+            <svg
+              class="objectives-squiggle"
+              viewBox="0 0 200 20"
+              aria-hidden="true"
+            >
+              <path
+                d="M2 12 Q 14 2, 26 12 T 50 12 T 74 12 T 98 12 T 122 12 T 146 12 T 170 12 T 194 12"
+                stroke="#e05cc0"
+                stroke-width="3"
+                fill="none"
+                stroke-linecap="round"
+              />
+            </svg>
+            achive</span
+          ><br />
+          their <span class="text-accent">business objectives</span>
+        </h2>
+
+        <!-- Baris 1: eyebrow + 2 kolom paragraf -->
+        <div class="row objectives-row mt-5">
+          <div
+            class="col-12 col-lg-2 d-flex flex-column justify-content-between objectives-left"
+          >
+            <p class="eyebrow-dreams">
+              London <span class="text-accent">2006</span>
+            </p>
+          </div>
+          <div class="col-12 col-lg-5 objectives-para-col">
+            <p class="section-copy">
+              Influenzailla is a leading design and marketing agency that offers
+              creative solutions to businesses of all sizes. Our team of experts
+              specializes in creating unique and effective designs that help our
+              clients stand out in a crowded market.
+            </p>
+            <p class="section-copy">
+              Our mission is to help our clients achieve their business
+              objectives through innovative and effective design solutions. We
+              believe that great design is more than just aesthetics. It's about
+              creating a seamless user experience that engages and delights your
+              audience.
+            </p>
+          </div>
+          <div class="col-12 col-lg-5 objectives-para-col">
+            <p class="section-copy">
+              We take pride in our ability to understand the unique needs and
+              goals of each of our clients, and to develop customized solutions
+              that exceed their expectations. Our team of talented designers and
+              marketers work closely with our clients to create a cohesive brand
+              identity, effective marketing strategies, and user-friendly
+              websites and applications.
+            </p>
+            <p class="section-copy">
+              We offer a wide range of services, including branding, web design,
+              social media marketing, graphic design, and more. Our goal is to
+              help our clients achieve success by providing them with the tools
+              and resources they need to grow their business.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tab-style table: Branding / Design / Marketing -->
+        <div class="objectives-table mt-5">
+          <ul class="nav nav-pills objectives-tabs" role="tablist">
+            <li class="nav-item">
+              <a class="nav-link active" data-toggle="pill" href="#tab-branding"
+                >Branding</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#tab-design"
+                >Design</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-toggle="pill" href="#tab-marketing"
+                >Marketing</a
+              >
+            </li>
+          </ul>
+          <div class="tab-content objectives-tab-content">
+            <div class="tab-pane fade show active" id="tab-branding">
+              <div class="objectives-tab-inner">
+                <span class="orb-icon"></span>
+                <div class="objectives-tab-texts">
+                  <p>
+                    Our team of experts specializes in creating unique and
+                    effective designs
+                  </p>
+                  <p>
+                    We created marketing materials that were consistent with the
+                    new brand identity, such as business cards, brochures, and
+                    social media graphics.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-design">
+              <!-- state "Design" tidak pakai ikon orb, sesuai spec -->
+              <div class="objectives-tab-inner">
+                <div class="objectives-tab-texts">
+                  <p>
+                    We craft clean, functional, and elegant designs that put
+                    your users first while staying true to your brand.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="tab-marketing">
+              <div class="objectives-tab-inner">
+                <span class="orb-icon-cluster" aria-hidden="true">
+                  <span class="orb-icon-cluster-item"></span>
+                  <span class="orb-icon-cluster-item"></span>
+                </span>
+                <div class="objectives-tab-texts">
+                  <p>
+                    Data-driven marketing strategies that help your business
+                    reach the right audience at the right time.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Baris 3: ikon sparkle + paragraf penutup -->
+        <div class="row objectives-row mt-5">
+          <div
+            class="col-12 col-lg-2 d-flex flex-column justify-content-between objectives-left"
+          >
+            <span class="cluster-icon-single" aria-hidden="true">
+              <svg viewBox="0 0 40 40" width="34" height="34">
+                <path
+                  d="M20 4 L23 15 L34 18 L23 21 L20 32 L17 21 L6 18 L17 15 Z"
+                  fill="none"
+                  stroke="#e8e6f0"
+                  stroke-width="1"
+                />
+              </svg>
+            </span>
+          </div>
+          <div class="col-12 col-lg-5 objectives-para-col">
+            <p class="section-copy">
+              We specialize in creating unique and innovative designs that not
+              only capture the essence of your business but also help you
+              achieve your goals. We believe that great design is about creating
+              a seamless user experience that engages and delights your
+              audience, and we work hard to ensure that every design we create
+              meets this high standard.
+            </p>
+          </div>
+          <div class="col-12 col-lg-5"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+     BANNER FULL-WIDTH "EXPERTISE AND EXPERIENCE"
+     Background: assets/img/heros.png (ganti file ini dengan aset final)
+====================================================== -->
+    <section
+      class="expertise-banner"
+      id="what-we-do"
+      style="background-image: url(&quot;assets/img/hero-section.png&quot;)"
+    >
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="container position-relative h-100">
+        <div
+          class="banner-inner d-flex flex-column justify-content-between h-100"
+        >
+          <!-- 3 teks "hi there, let's get started!" — hiasan berulang, yang pertama diberi aksen warna -->
+          <div class="d-flex flex-wrap banner-greet-row">
+            <p class="banner-greet">
+              hi there, <span class="text-accent">let's</span><br />get
+              <span class="text-accent">started!</span>
+            </p>
+            <p class="banner-greet ml-auto">
+              hi there, let's<br />get started!
+            </p>
+            <p class="banner-greet ml-4">hi there, let's<br />get started!</p>
+          </div>
+
+          <!-- Heading + paragraf, sejajar di baris bawah -->
+          <div class="row align-items-end banner-bottom-row">
+            <div class="col-12 col-lg-6">
+              <h2 class="section-title banner-title">
+                Expertise
+                <span class="text-accent"
+                  >and
+                  <svg
+                    class="banner-squiggle"
+                    viewBox="0 0 130 20"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="M2 12 Q 12 2, 22 12 T 42 12 T 62 12 T 82 12 T 102 12 T 122 12"
+                      stroke="#ffffff"
+                      stroke-width="3"
+                      fill="none"
+                      stroke-linecap="round"
+                    />
+                  </svg> </span
+                ><br />
+                <span class="text-accent">experience</span>
+              </h2>
+            </div>
+            <div class="col-12 col-lg-6 mt-4 mt-lg-0">
+              <p class="banner-copy">
+                We believe that
+                <span class="text-accent"
+                  >building long-lasting relationships</span
+                >
+                with our clients is
+                <span class="text-accent">key to achieving success</span>. We
+                are passionate about
+                <span class="text-accent">what we do, and we are</span>
+                committed to
+                <span class="text-accent">delivering exceptional results</span>
+                for every client we work with.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+     LANJUTAN "EXPERTISE AND EXPERIENCE" — 3 kolom
+     (ikon cluster + 2 grup paragraf)
+====================================================== -->
+    <section class="expertise-more py-5">
+      <div class="container">
+        <div class="row objectives-row">
+          <div class="col-12 col-lg-2 objectives-left">
+            <span class="cluster-icon" aria-hidden="true">
+              <svg viewBox="0 0 90 40" width="90" height="40">
+                <path
+                  d="M14 4 L16.5 11 L24 12 L18 17 L19.5 24.5 L14 20.5 L8.5 24.5 L10 17 L4 12 L11.5 11 Z"
+                  fill="none"
+                  stroke="#e8e6f0"
+                  stroke-width="1"
+                />
+                <path
+                  d="M38 2 L40.8 10 L49 11 L42.5 16.5 L44.3 25 L38 20.3 L31.7 25 L33.5 16.5 L27 11 L35.2 10 Z"
+                  fill="none"
+                  stroke="#e8e6f0"
+                  stroke-width="1"
+                />
+                <path
+                  d="M62 4 L64.5 11 L72 12 L66 17 L67.5 24.5 L62 20.5 L56.5 24.5 L58 17 L52 12 L59.5 11 Z"
+                  fill="none"
+                  stroke="#e8e6f0"
+                  stroke-width="1"
+                />
+              </svg>
+            </span>
+          </div>
+          <div class="col-12 col-lg-5 objectives-para-col">
+            <p class="section-copy">
+              Our team of talented designers and marketers works closely with
+              each of our clients, taking the time to understand their unique
+              needs and goals, and developing customized solutions that exceed
+              their expectations.
+            </p>
+            <p class="section-copy">
+              We take pride in our ability to create a cohesive brand identity,
+              effective marketing strategies, and user-friendly websites and
+              applications that help our clients achieve success.
+            </p>
+          </div>
+          <div class="col-12 col-lg-5 objectives-para-col">
+            <p class="section-copy">
+              So if you're a start-up looking to create a strong brand identity,
+              or an established business looking to revamp your marketing
+              strategy, we have the expertise and experience to help you
+              succeed.
+            </p>
+            <p class="section-copy">
+              Contact us today to learn more about our services and how we can
+              help your business grow. We look forward to hearing from you and
+              starting this exciting journey together.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+     "PROJECTS FOR OUR CLIENTS" — carousel
+     Background card posisi 1 & 2 pakai assets/img/card-project-1.png
+     dan assets/img/card-project-2.png (dipakai ulang di tiap slide,
+     karena cuma 2 aset yang disediakan untuk 3 slide).
+====================================================== -->
+    <section class="projects-section py-5" id="projects">
+      <div class="container-fluid px-0">
+        <div class="container">
+          <h2 class="section-title mb-4">
+            Projects for
+            <span class="text-accent"
+              >our
+              <svg
+                class="objectives-squiggle"
+                viewBox="0 0 130 20"
+                aria-hidden="true"
+              >
+                <path
+                  d="M2 12 Q 12 2, 22 12 T 42 12 T 62 12 T 82 12 T 102 12 T 122 12"
+                  stroke="#e05cc0"
+                  stroke-width="3"
+                  fill="none"
+                  stroke-linecap="round"
+                />
+              </svg> </span
+            ><br />
+            <span class="text-accent">clients</span>
+          </h2>
+        </div>
+
+        <div
+          id="projectsCarousel"
+          class="carousel slide"
+          data-ride="false"
+          data-interval="false"
+        >
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-6">
+                  <div
+                    class="project-card"
+                    style="
+                      background-image: url(&quot;assets/img/card-project-1.png&quot;);
+                    "
+                  >
+                    <div class="project-card-overlay" aria-hidden="true"></div>
+                    <span class="project-eyebrow">branding</span>
+                    <h3>Food store identity</h3>
+                    <p>
+                      We worked with a local health food store to create a new
+                      brand identity that was both modern and eco-friendly.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div
+                    class="project-card"
+                    style="
+                      background-image: url(&quot;assets/img/card-project-2.png&quot;);
+                    "
+                  >
+                    <div class="project-card-overlay" aria-hidden="true"></div>
+                    <span class="project-eyebrow"
+                      >web <span class="text-accent">design</span></span
+                    >
+                    <h3>Technology startup site</h3>
+                    <p>
+                      We partnered with a technology startup to create a new
+                      website that would showcase their innovative product and
+                      attract investors.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-6">
+                  <div
+                    class="project-card"
+                    style="
+                      background-image: url(&quot;assets/img/card-project-1.png&quot;);
+                    "
+                  >
+                    <div class="project-card-overlay" aria-hidden="true"></div>
+                    <span class="project-eyebrow">marketing</span>
+                    <h3>Fashion instagram marketing</h3>
+                    <p>
+                      Content strategy and visual identity for a fashion brand's
+                      Instagram presence.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div
+                    class="project-card"
+                    style="
+                      background-image: url(&quot;assets/img/card-project-2.png&quot;);
+                    "
+                  >
+                    <div class="project-card-overlay" aria-hidden="true"></div>
+                    <span class="project-eyebrow"
+                      >web <span class="text-accent">design</span></span
+                    >
+                    <h3>Mobile and desktop services</h3>
+                    <p>
+                      A responsive service platform built for both mobile and
+                      desktop users.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="row no-gutters">
+                <div class="col-12 col-md-6">
+                  <div
+                    class="project-card"
+                    style="
+                      background-image: url(&quot;assets/img/card-project-1.png&quot;);
+                    "
+                  >
+                    <div class="project-card-overlay" aria-hidden="true"></div>
+                    <span class="project-eyebrow">branding</span>
+                    <h3>Eco packaging design</h3>
+                    <p>
+                      Sustainable packaging design for an eco-conscious consumer
+                      brand.
+                    </p>
+                  </div>
+                </div>
+                <div class="col-12 col-md-6">
+                  <div
+                    class="project-card"
+                    style="
+                      background-image: url(&quot;assets/img/card-project-2.png&quot;);
+                    "
+                  >
+                    <div class="project-card-overlay" aria-hidden="true"></div>
+                    <span class="project-eyebrow"
+                      >social <span class="text-accent">media</span></span
+                    >
+                    <h3>Social media graphics</h3>
+                    <p>
+                      A cohesive graphics system for recurring social media
+                      content.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-controls">
+            <a
+              class="carousel-arrow carousel-arrow-prev"
+              href="#projectsCarousel"
+              role="button"
+              data-slide="prev"
+              aria-label="Previous"
+              >&#8592;</a
+            >
+            <ol class="carousel-indicators-custom">
+              <li
+                data-target="#projectsCarousel"
+                data-slide-to="0"
+                class="active"
+              ></li>
+              <li data-target="#projectsCarousel" data-slide-to="1"></li>
+              <li data-target="#projectsCarousel" data-slide-to="2"></li>
+            </ol>
+            <a
+              class="carousel-arrow carousel-arrow-next"
+              href="#projectsCarousel"
+              role="button"
+              data-slide="next"
+              aria-label="Next"
+              >&#8594;</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================================================
+     FOOTER — reuse struktur grid yang sama persis dengan navbar
+     header, cuma warnanya di-override jadi aksen ungu/pink
+     (lihat class "footer-grid" di style.css)
+====================================================== -->
+    <footer class="site-footer" id="contact">
+      <div class="container-nav">
+        <div class="navbar navbar-expand-lg navbar-grid footer-grid">
+          <a class="navbar-brand nav-logo-cell" href="#">
+            <img
+              src="assets/icons/logo-mark.svg"
+              alt=""
+              class="logo-mark"
+              width="28"
+              height="28"
+            />
+            <span class="logo-text"
+              >Influ<span class="text-accent">enzailla</span></span
+            >
+            <span class="brand-tagline d-none d-md-inline">
+              bespoke <span class="text-accent">design and</span><br />
+              <span class="text-accent">marketing</span> services
+            </span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#footerNav"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Desktop grid (2 baris, sama seperti navbar header) -->
+          <div class="nav-menu-cell d-none d-lg-flex">
+            <div class="nav-row nav-row-1">
+              <a class="nav-cell" href="#about-us">About</a>
+              <a class="nav-cell nav-cell-wide" href="#expertise">Servises</a>
+              <a class="nav-cell nav-cell-wide" href="#projects">Cases</a>
+              <a class="nav-cell" href="#team">Team</a>
+              <a
+                class="nav-cell nav-cell-icon"
+                href="#lang"
+                aria-label="Language"
+              >
+                <img
+                  src="assets/icons/globe.svg"
+                  alt="Language"
+                  width="18"
+                  height="18"
+                />
+              </a>
+            </div>
+            <div class="nav-row nav-row-2">
+              <a class="nav-cell nav-cell-wide" href="#boost-program"
+                >Boost Program</a
+              >
+              <a class="nav-cell nav-cell-wide" href="#products">Products</a>
+              <a class="nav-cell nav-cell-narrow" href="#book">Book</a>
+              <a class="nav-cell" href="#blog">Blog</a>
+            </div>
+          </div>
+
+          <!-- Mobile: list vertikal sederhana -->
+          <div class="collapse navbar-collapse d-lg-none" id="footerNav">
+            <ul class="navbar-nav main-menu footer-menu-mobile">
+              <li class="nav-item">
+                <a class="nav-link" href="#about-us">About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#expertise">Servises</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">Cases</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#team">Team</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#boost-program">Boost Program</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#products">Products</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#book">Book</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#blog">Blog</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <p class="footer-copy">&copy; 2026 Influenzailla. All rights reserved.</p>
+    </footer>
+
+    <!-- jQuery + Popper 1.x + Bootstrap 4.6.2 (urutan wajib seperti ini) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
