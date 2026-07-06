@@ -1,6 +1,36 @@
 <!doctype html>
 <html lang="id">
   <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-PQMMZH9C");
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Google Analytics (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-0NC7V4XL3E"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+      gtag("config", "G-0NC7V4XL3E");
+    </script>
+    <!-- End Google Analytics -->
+
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta
@@ -23,6 +53,16 @@
     <link rel="stylesheet" href="css/index.css" />
   </head>
   <body data-spy="scroll" data-target="#heroLinksNav" data-offset="80">
+    <!-- Google Tag Manager (noscript) -->
+    <noscript
+      ><iframe
+        src="https://www.googletagmanager.com/ns.html?id=GTM-PQMMZH9C"
+        height="0"
+        width="0"
+        style="display: none; visibility: hidden"
+      ></iframe
+    ></noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <div
       class="top-hero-wrap"
       style="background-image: url(&quot;images/bg_hero_01.jpg&quot;)"
@@ -144,12 +184,15 @@
                       alt="ico_02"
                     />
                     <span class="text-accent">your</span>
-                    <span class="hero-sub"
+                    <span class="hero-sub d-none d-md-block"
                       >boost your brand with our marketing expertise</span
                     >
                   </span>
                   <span class="hero-title-line2">audience</span>
                 </span>
+                <span class="hero-sub-mobile d-md-none"
+                  >boost your brand with our marketing expertise</span
+                >
               </h1>
             </div>
 
@@ -174,16 +217,24 @@
       </section>
       <nav id="heroLinksNav" class="row hero-links">
         <div class="col-6 col-md-3">
-          <a class="nav-link" href="#about-us">About us</a>
+          <a class="nav-link" href="#about-us" data-track-label="about-us"
+            >About us</a
+          >
         </div>
         <div class="col-6 col-md-3">
-          <a class="nav-link" href="#expertise">Expertise</a>
+          <a class="nav-link" href="#expertise" data-track-label="expertise"
+            >Expertise</a
+          >
         </div>
         <div class="col-6 col-md-3">
-          <a class="nav-link" href="#get-started">Get started</a>
+          <a class="nav-link" href="#get-started" data-track-label="get-started"
+            >Get started</a
+          >
         </div>
         <div class="col-6 col-md-3">
-          <a class="nav-link" href="#what-we-do">What we do</a>
+          <a class="nav-link" href="#what-we-do" data-track-label="what-we-do"
+            >What we do</a
+          >
         </div>
       </nav>
     </div>
@@ -550,13 +601,14 @@
 
           <div class="row align-items-end banner-bottom-row">
             <div class="col-12 col-lg-6">
-              <img src="images/ico_02.svg" class="hero-squiggle-3" alt="ico_02" />
+              <img
+                src="images/ico_02.svg"
+                class="hero-squiggle-3"
+                alt="ico_02"
+              />
               <h2 class="section-title banner-title">
                 Expertise
-                <span class="text-accent"
-                  >and
-                   </span
-                ><br />
+                <span class="text-accent">and </span><br />
                 <span class="text-accent">experience</span>
               </h2>
             </div>
@@ -768,15 +820,10 @@
               aria-label="Previous"
               >&#8592;</a
             >
-            <ol class="carousel-indicators-custom">
-              <li
-                data-target="#projectsCarousel"
-                data-slide-to="0"
-                class="active"
-              ></li>
-              <li data-target="#projectsCarousel" data-slide-to="1"></li>
-              <li data-target="#projectsCarousel" data-slide-to="2"></li>
-            </ol>
+            <ol
+              class="carousel-indicators-custom"
+              id="projectsCarouselDots"
+            ></ol>
             <a
               class="carousel-arrow carousel-arrow-next"
               href="#projectsCarousel"
@@ -889,5 +936,69 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js"></script>
     <script src="js/script.js"></script>
+    <script>
+      document
+        .querySelectorAll("#heroLinksNav .nav-link")
+        .forEach(function (link) {
+          link.addEventListener("click", function () {
+            var label =
+              link.getAttribute("data-track-label") || link.textContent.trim();
+            window.dataLayer = window.dataLayer || [];
+            dataLayer.push({ event: "hero_nav_click", link_label: label });
+            if (typeof gtag === "function") {
+              gtag("event", "hero_nav_click", { link_label: label });
+            }
+          });
+        });
+    </script>
+    <script>
+      var projectsCarousel = document.getElementById("projectsCarousel");
+      if (projectsCarousel) {
+        var dotsList = document.getElementById("projectsCarouselDots");
+        var slides = projectsCarousel.querySelectorAll(".carousel-item");
+        slides.forEach(function (slide, index) {
+          var dot = document.createElement("li");
+          dot.setAttribute("data-target", "#projectsCarousel");
+          dot.setAttribute("data-slide-to", index);
+          if (index === 0) {
+            dot.classList.add("active");
+          }
+          dotsList.appendChild(dot);
+        });
+
+        function setActiveDot(index) {
+          dotsList.querySelectorAll("li").forEach(function (dot, i) {
+            dot.classList.toggle("active", i === index);
+          });
+        }
+        function getActiveIndex() {
+          var dots = Array.prototype.slice.call(
+            dotsList.querySelectorAll("li"),
+          );
+          return dots.findIndex(function (dot) {
+            return dot.classList.contains("active");
+          });
+        }
+
+        var total = slides.length;
+
+        var arrowPrev = document.querySelector(".carousel-arrow-prev");
+        var arrowNext = document.querySelector(".carousel-arrow-next");
+        if (arrowPrev) {
+          arrowPrev.addEventListener("click", function () {
+            setActiveDot((getActiveIndex() - 1 + total) % total);
+          });
+        }
+        if (arrowNext) {
+          arrowNext.addEventListener("click", function () {
+            setActiveDot((getActiveIndex() + 1) % total);
+          });
+        }
+
+        projectsCarousel.addEventListener("slid.bs.carousel", function (event) {
+          setActiveDot(event.to);
+        });
+      }
+    </script>
   </body>
 </html>
